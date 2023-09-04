@@ -72,27 +72,14 @@ export const vistaNuevoBombero = (req, res) => {
   res.render("bomberos/bomberoAdd", { Grados: Grados,Estados,User});
 };
 
-export const vistaEditarBombero = async (req, res) => {
+export const getBomberoId = async (req, res) => {
   reiniciarErrors();
-  const bombero = await Bomberos.findById(req.params.id).lean();
-
-  let {_id,nombre,apellido,dni,nOrden,rango,estado,despachador,admin} = bombero;
-
-  res.render("bomberos/bomberoEditar", {
-    Grados: Grados,
-    Estados,
-    estado,
-    User,
-    errors,
-    _id,
-    nombre,
-    apellido, 
-    dni,
-    nOrden,
-    rango,
-    despachador,
-    admin
-  });
+  try {
+    const bombero = await Bomberos.findById(req.params.id).lean();
+    res.send({bombero});
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 export const editarBombero = async (req,res)=>{
