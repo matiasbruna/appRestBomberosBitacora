@@ -37,16 +37,6 @@ app.use(novedadesPersonal);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-// Global Variables
-// app.use((req, res, next) => {
-//   res.locals.success_msg = req.flash("success_msg");
-//   res.locals.error_msg = req.flash("error_msg");
-//   res.locals.error = req.flash("error");
-//   res.locals.user = req.user || null;
-//   next();
-// });
-
-
 export default app;
 
 
