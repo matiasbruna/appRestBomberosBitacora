@@ -1,11 +1,15 @@
 import  {errors , reiniciarErrors } from "../models/Errors";
-import grados from '../models/Grados'
+import grados from '../models/Grados';
+import estados from '../models/Estados';
 import Bomberos from "../models/Bomberos";
 import {User, Admin} from "../models/auth";
 
 
 export const getGradosBomberos =  async (req, res) => {
   res.send(grados)
+};
+export const getEstadosBomberos = async (req, res) => {
+  res.send(estados);
 };
 
 export const mostrarBomberos =  async (req, res) => {
