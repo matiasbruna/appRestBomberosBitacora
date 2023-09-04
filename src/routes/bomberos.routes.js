@@ -8,7 +8,7 @@ import {
 } from "../controllers/bomberos.constroller";
 
 router.get("/bomberos", mostrarBomberos);
-router.get('/bombero/:id', getBomberoId);
+router.get('/bomberos/:id', getBomberoId);
 
 
 
