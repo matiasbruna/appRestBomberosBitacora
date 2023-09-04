@@ -1,8 +1,6 @@
 import  {errors , reiniciarErrors } from "../models/Errors";
-
+import grados from '../models/Grados'
 import Bomberos from "../models/Bomberos";
-import Grados from "../models/Grados";
-import Estados from "../models/Estados"
 import {User, Admin} from "../models/auth";
 
 export const mostrarBomberos =  async (req, res) => {
@@ -139,4 +137,8 @@ export const editarBombero = async (req,res)=>{
     }
 
   }
+};
+
+export const getGrados = async (req,res)=>{
+    await res.send(grados);
 };
