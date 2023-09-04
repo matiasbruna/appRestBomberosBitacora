@@ -76,7 +76,7 @@ export const getBomberoId = async (req, res) => {
   reiniciarErrors();
   try {
     const bombero = await Bomberos.findById(req.params.id).lean();
-    res.send({bombero});
+    res.send(bombero);
   } catch (error) {
     console.log(error)
   }
