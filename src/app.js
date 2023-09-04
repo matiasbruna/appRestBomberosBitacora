@@ -1,12 +1,6 @@
 import express from "express";
-import indexRoutes from "./routes/index.routes";
 import bomberoRoutes from "./routes/bomberos.routes";
-import unidadesRoutes from "./routes/unidades.routes";
-import novedaesRoutes from "./routes/novedades.routes";
-import movimientoUnidades from "./routes/movimientosUnidades.routes";
-import novedadesPersonal from "./routes/novedadesPersonal.routes";
-import loginRoutes from "./routes/login.routes";
-import flash from "connect-flash";
+
 
 
 import path from "path";
@@ -20,18 +14,10 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
-app.use(flash());
 
 
-let globalUsername = null;
-//configuracion de las rutas
-app.use(indexRoutes);
 app.use(bomberoRoutes);
-app.use(unidadesRoutes);
-app.use(novedaesRoutes);
-app.use(movimientoUnidades);
-app.use(loginRoutes);
-app.use(novedadesPersonal);
+
 
 //configuracion de los archivos estaticos.
 
